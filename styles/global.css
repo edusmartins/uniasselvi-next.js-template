@@ -1,0 +1,79 @@
+/* 
+	?
+	? ----> vars
+	?
+*/
+:root {
+	/** colors **/
+	--preto: #111111;
+	--cinza-muito-escuro: #373737;
+	--cinza-escuro: #646464;
+	--cinza-medio-escuro: #979797;
+	--cinza-medio: #cacaca;
+	--cinza-claro: #f2f2f2;
+	--cinza-muito-claro: #f6f6f6;
+	--branco: #ffffff;
+
+	--verde-escuro: #007f7a;
+	--verde-nao-ouse: #00afa9;
+	--verde-claro: #5ae1db;
+
+	--amarelo-escuro: #c7ac00;
+	--amarelo: #ffdd00;
+	--amarelo-claro: #ffff54;
+
+	--acerto-escuro: #008300;
+	--acerto: #1fb40b;
+	--acerto-claro: #64e74a;
+
+	--erro-escuro: #b40000;
+	--erro: #f00b00;
+	--erro-claro: #ff5934;
+
+	--aviso-escuro: #c48000;
+	--aviso: #fcaf17;
+	--aviso-claro: #ffe153;
+
+	--seleções: #598ffc;
+
+	/** fontes/texto **/
+	--default-font-size: 16px;
+
+	--fs-12: 0.75em;
+	--fs-16: 1em;
+	--fs-18: 1.125em;
+	--fs-24: 1.5em;
+	--fs-30: 1.85em;
+	--fs-40: 2.5em;
+	--fs-48: max(3em, 48px);
+	--fs-60: max(3.75em, 60px);
+
+	--ff-rubik: 'Rubik', sans-serif;
+	--ff-neo: 'neo-sans', sans-serif;
+
+	--letter-spacing-light: 0.05em;
+	--letter-spacing-lighter: 0.03em;
+	--line-height: 1.6;
+}
+
+/* 
+	?
+	? ----> altura de linha, spacing e headings
+	?
+*/
+* {
+	box-sizing: border-box;
+}
+
+body,
+html {
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-size: var(--fs-16);
+	font-family: var(--ff-rubik);
+	line-height: var(--line-height);
+	letter-spacing: var(--letter-spacing-lighter);
+}

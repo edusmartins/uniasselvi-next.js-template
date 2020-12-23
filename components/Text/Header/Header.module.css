@@ -1,0 +1,41 @@
+.h1 {
+	font-family: var(--ff-neo);
+	font-weight: bold;
+
+	letter-spacing: var(--letter-spacing-light);
+}
+
+.h2 {
+	font-family: var(--ff-neo);
+	font-weight: medium;
+
+	letter-spacing: var(--letter-spacing-light);
+}
+
+.h3 {
+	font-family: var(--ff-neo);
+	font-weight: normal;
+
+	letter-spacing: var(--letter-spacing-light);
+}
+
+.h4 {
+	font-family: var(--ff-rubik);
+	font-weight: bold;
+
+	letter-spacing: var(--letter-spacing-light);
+}
+
+.h5 {
+	font-family: var(--ff-rubik);
+	font-weight: medium;
+
+	letter-spacing: var(--letter-spacing-light);
+}
+
+.h6 {
+	font-family: var(--ff-rubik);
+	font-weight: normal;
+
+	letter-spacing: var(--letter-spacing-light);
+}

@@ -1,0 +1,21 @@
+.unordered_list {
+	margin: 1em 0;
+	padding: 0;
+	list-style: none;
+	display: grid;
+	grid-gap: 1em;
+}
+
+.unordered_list>li {
+	display: grid;
+	grid-template-columns: 0 1fr;
+	grid-gap: 1.75em;
+	align-items: start;
+}
+
+.unordered_list li:before {
+	content: '\2022';
+	font-size: 36px;
+	color: var(--cinza-escuro);
+	line-height: 1.5rem;
+}
