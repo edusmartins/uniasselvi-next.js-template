@@ -19,43 +19,35 @@ const SIZES = ['small', 'large'];
 
 interface ButtonProps {
 	/**
-	 * Estilo do botão. Se não definido, o default é 'prime'
-	 * @type {string}
+	 * @param {string} props.style - Estilo do botão. Se não definido, o default é 'prime'
 	 */
 	style?: 'prime' | 'second' | 'third' | 'warning' | 'right' | 'wrong';
 	/**
-	 * Tamanho do botão. Se não definido, o default é null
-	 * @type {string}
+	 * @param {string} props.size - Tamanho do botão. Se não definido, o default é null
 	 */
 	size?: 'small' | 'large';
 	/**
-	 * Se o botão é preenchido. Se não definido, o default é {false}
-	 * @type {boolean}
+	 * @param {boolean} props.filled - Se o botão é preenchido. Se não definido, o default é {false}
 	 */
 	filled?: boolean;
 	/**
-	 * Se o botão está desabilitado. Se não definido, o default é {false}
-	 * @type {boolean}
+	 * @param {boolean} props.disabled - Se o botão está desabilitado. Se não definido, o default é {false}
 	 */
 	disabled?: boolean;
 	/**
-	 * Se o botão tem bordas arredondadas. Se não definido, o default é {false}
-	 * @type {boolean}
+	 * @param {boolean} props.rounded - Se o botão tem bordas arredondadas. Se não definido, o default é {false}
 	 */
 	rounded?: boolean;
 	/**
-	 * Função onClick do botão
-	 * @type {Function}
+	 * @param {Function} props.onClick - Função onClick do botão
 	 */
 	onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 	/**
-	 * Tipo do botão. Valor default é 'button'.
-	 * @type {string}
+	 * @param {string} props.type - Tipo do botão. Valor default é 'button'
 	 */
 	type?: 'button' | 'submit' | 'reset';
 	/**
-	 * className do botão.
-	 * @type {string}
+	 * @param {string} props.className - className do botão
 	 */
 	className?: string;
 }
