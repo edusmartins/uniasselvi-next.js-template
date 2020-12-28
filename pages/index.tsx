@@ -115,9 +115,6 @@ export default function Home() {
 						onClick={() => {
 							console.log('clicked');
 						}}
-						onClick={() => {
-							console.log('clicked');
-						}}
 						style='warning'
 						size='small'
 					>
