@@ -2,47 +2,49 @@ import React from 'react';
 import styles from './Input.module.css';
 
 /**
+ * @render react
  * @name Input
- *
- * @param {string} props.style - Estilo do input. Se não definido, o default é null
- * @param {string} props.type - Tipo do input
- * @param {string} props.value - Texto pré-definido para o input se ele for read-only
- * @param {string} props.defaultValue - Texto pré-definido para o input se o usuário puder mudar esse valor
- * @param {boolean} props.readOnly - Se o input é apenas de leitura
- * @param {boolean} props.disabled - Se o input está desabilitado. Valor default é {false}
- * @param {number} props.size - A largura visível (em caracteres) do campo de input. Funciona com inputs do tipo text, search, tel, url, email e password
- * @param {number} props.maxLength - Número máximo de caracteres
- * @param {number} props.min - Valor mínimo. Funciona os inputs do tipo number, range, date, datetime-local, month, time e week
- * @param {number} props.max - Valor máximo. Funciona os inputs do tipo number, range, date, datetime-local, month, time e week
- * @param {boolean} props.multiple - Se o input aceita múltiplos valores. Funciona com inputs do tipo email e file
- * @param {string} props.pattern - Padrão do input. Funciona com os inputs do tipo text, date, search, url, tel, email e password
- * @param {string} props.placeHolder - Texto do input antes de receber algum valor. Funciona os inputs do tipo  text, search, url, tel, email e password
- * @param {boolean} props.required - Se o input é obrigatório. Funciona os inputs do tipo text, search, url, tel, email, password, date pickers, number, checkbox, radio e file
- * @param {number} props.step - Específica intervalo numérico válido para o input. Funciona os inputs do tipo number, range, date, datetime-local, month, time e week
- * @param {boolean} props.autoFocus - Se o input entra em foco quando a página carrega
- * @param {number} props.height - Específica altura para input do tipo image
- * @param {number} props.width - Específica largura para input do tipo image
- * @param {string} props.list - Indica qual a lista (datalist) de opções pré-definidas para o input
- * @param {string} props.autoComplete - Se o input deve ter ou não autocomplete. Funciona os inputs do tipo text, search, url, tel, email, password, datepickers, range e color
- * @param {string} props.icon - Caminho do icone para o input
- * @param {string} props.id - id do input
- * @param {string} props.name - name do input
- * @param {string} props.accept - accept do input
- * @param {(event: React.MouseEvent<HTMLButtonElement>) => void} props.onClick - Função onClick do input
- * @param {(event: React.ChangeEvent<HTMLInputElement>) => void} props.onChange - Função onChange do input
- *
+ * @description Input básico, do tipo 'text' por padrão, mas pode receber outros tipos. Usado em formulários para receber alguma informação do usuário.
  * @component
  * @example
- * return(
  * <Input value='Completo' style='done' />
- * )
+ *
+ * @typedef {Object} Props
+ *
+ * @property {'done' | 'warning' | 'right' | 'wrong'} [style] - Estilo do input. Se não definido, o default é `null`
+ * @property {'button' | 'checkbox' | 'color' | 'date' | 'datetime-local' | 'email' | 'file' | 'hidden' | 'image' | 'month' | 'number' | 'password' | 'radio' | 'range' | 'reset' | 'search' | 'submit' | 'tel' | 'text' | 'time' | 'url' | 'week'} [type] - Tipo do input
+ * @property {string} [value] - Texto pré-definido para o input se ele for read-only
+ * @property {string} [defaultValue] - Texto pré-definido para o input se o usuário puder mudar esse valor
+ * @property {boolean} [readOnly] - Se o input é apenas de leitura
+ * @property {boolean} [disabled] - Se o input está desabilitado. Valor default é `{false}`
+ * @property {number} [size] - A largura visível (em caracteres) do campo de input. Funciona com inputs do tipo text, search, tel, url, email e password
+ * @property {number} [maxLength] - Número máximo de caracteres
+ * @property {number} [min] - Valor mínimo. Funciona os inputs do tipo number, range, date, datetime-local, month, time e week
+ * @property {number} [max] - Valor máximo. Funciona os inputs do tipo number, range, date, datetime-local, month, time e week
+ * @property {boolean} [multiple] - Se o input aceita múltiplos valores. Funciona com inputs do tipo email e file
+ * @property {string} [pattern] - Padrão do input. Funciona com os inputs do tipo text, date, search, url, tel, email e password
+ * @property {string} [placeHolder] - Texto do input antes de receber algum valor. Funciona os inputs do tipo  text, search, url, tel, email e password
+ * @property {boolean} [required] - Se o input é obrigatório. Funciona os inputs do tipo text, search, url, tel, email, password, date pickers, number, checkbox, radio e file
+ * @property {number} [step] - Específica intervalo numérico válido para o input. Funciona os inputs do tipo number, range, date, datetime-local, month, time e week
+ * @property {boolean} [autoFocus] - Se o input entra em foco quando a página carrega
+ * @property {number} [height] - Específica altura para input do tipo image
+ * @property {number} [width] - Específica largura para input do tipo image
+ * @property {string} [list] - Indica qual a lista (datalist) de opções pré-definidas para o input
+ * @property {string} [autoComplete] - Se o input deve ter ou não autocomplete. Funciona os inputs do tipo text, search, url, tel, email, password, datepickers, range e color
+ * @property {string} [icon] - Caminho do icone para o input
+ * @property {string} [id] - id do input
+ * @property {string} [name] - name do input
+ * @property {string} [accept] - accept do input
+ * @property {function} [onClick] - Função `onClick` do input
+ * @property {function} [onChange] - Função `onChange` do input
+ *
  */
 
 // Array com os estilos disponíveis
 const STYLES = ['done', 'warning', 'right', 'wrong'];
 
 interface InputProps {
-	style?: string;
+	style?: 'done' | 'warning' | 'right' | 'wrong';
 	type?:
 		| 'button'
 		| 'checkbox'
@@ -93,6 +95,9 @@ interface InputProps {
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
+/**
+ * @param {Props} props
+ */
 const Input: React.FC<InputProps> = ({
 	children,
 	style,

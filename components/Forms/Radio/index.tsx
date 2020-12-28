@@ -2,24 +2,26 @@ import React from 'react';
 import styles from './Radio.module.css';
 
 /**
+ * @render react
  * @name Radio
- *
- * @param {string} props.id - ID do input
- * @param {string} props.name - Name do input
- * @param {boolean} props.disabled - Se o input está desabilitado. Valor default é {false}
- * @param {boolean} props.checked - Se o input está marcado. Valor default é {false}
- * @param {boolean} props.defaultChecked - Se o input está inicialmente marcado. Valor default é {false}
- * @param {boolean} props.required - Se o input é obrigatório
- * @param {string} props.value - Value do input
- * @param {string} props.defaultValue - Texto pré-definido para o input se o usuário puder mudar esse valor
- * @param {(event: React.ChangeEvent<HTMLInputElement>) => void} props.onChange - Função onChange do input
- * @param {(event: React.MouseEvent<HTMLInputElement>) => void} props.onClick - Função onClick do input
- *
+ * @description Input tipo radio, usado para questões de multipla escolha onde só há uma única resposta correta, sem possibilidade de marcar mais de uma opção ao mesmo tempo.
  * @component
  * @example
- * return(
- * 	<Radio id={1} name='rg-1' checked={true}>Input type radio</Radio>
- * )
+ * <Radio id={1} name='rg-1' checked={true}>Input type radio</Radio>
+ *
+ * @typedef {Object} Props
+ *
+ * @property {string} [id] - ID do input
+ * @property {string} [name] - Name do input
+ * @property {boolean} [disabled] - Se o input está desabilitado. Valor default é `{false}`
+ * @property {boolean} [checked] - Se o input está marcado. Valor default é `{false}`
+ * @property {boolean} [defaultChecked] - Se o input está inicialmente marcado. Valor default é `{false}`
+ * @property {boolean} [required] - Se o input é obrigatório
+ * @property {string} [value] - Value do input
+ * @property {string} [defaultValue] - Texto pré-definido para o input se o usuário puder mudar esse valor
+ * @property {function} [onChange] - Função `onChange` do input
+ * @property {function} [onClick] - Função `onClick` do input
+ *
  */
 
 interface RadioProps {
@@ -36,6 +38,9 @@ interface RadioProps {
 	onClick?: (event: React.MouseEvent<HTMLInputElement>) => void;
 }
 
+/**
+ * @param {Props} props
+ */
 const Radio: React.FC<RadioProps> = ({
 	children,
 	id,

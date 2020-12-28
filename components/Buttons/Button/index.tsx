@@ -2,20 +2,24 @@ import React from 'react';
 import styles from './Button.module.css';
 
 /**
+ *
+ * @render react
  * @name Button
- *
- * @param {string} props.size - Tamanho do botão. Se não definido, o default é null
- * @param {boolean} props.filled - Se o botão é preenchido. Se não definido, o default é {false}
- * @param {boolean} props.disabled - Se o botão está desabilitado. Se não definido, o default é {false}
- * @param {boolean} props.rounded - Se o botão tem bordas arredondadas. Se não definido, o default é {false}
- * @param {(event: React.MouseEvent<HTMLButtonElement>) => void} props.onClick - Função onClick do botão
- * @param {string} props.type - Tipo do botão. Valor default é 'button'
- *
+ * @description Botão simples, apenas com texto.
  * @component
  * @example
- * return(
- * 	<Button rounded={true} filled={true} style='prime' size='large'>Primário</Button>
- * )
+ * <Button onClick={() => {console.log('clicked')}} rounded={true} filled={true} style='prime' size='large'>Primário</Button>
+ *
+ * @typedef {Object} Props
+ *
+ * @property {'prime' | 'second' | 'third' | 'warning' | 'right' | 'wrong'} [style] - Estilo do botão. Se não definido, o default é `prime`
+ * @property {'small' | 'large'} [size] - Tamanho do botão. Se não definido, o default é `null`
+ * @property {boolean} [filled] - Se o botão é preenchido. Se não definido, o default é `{false}`
+ * @property {boolean} [disabled] - Se o botão está desabilitado. Se não definido, o default é `{false}`
+ * @property {boolean} [rounded] - Se o botão tem bordas arredondadas. Se não definido, o default é `{false}`
+ * @property {string} [type] - Tipo do botão. Valor default é `button`
+ * @property {function} onClick - Função `onClick` do botão
+ *
  */
 
 // Array com os estilos disponíveis
@@ -35,6 +39,9 @@ interface ButtonProps {
 	className?: string;
 }
 
+/**
+ * @param {Props} props
+ */
 const Button: React.FC<ButtonProps> = ({
 	children,
 	style,

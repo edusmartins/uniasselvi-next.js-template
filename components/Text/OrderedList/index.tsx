@@ -2,17 +2,16 @@ import React from 'react';
 import styles from './OrderedList.module.css';
 
 /**
+ * @render react
  * @name OrderedList
- *
+ * @description Componente de lista ordenada. Recebe `<li>` tags como children.
  * @component
  * @example
- * return(
- * 	<OrderedList>
+ * <OrderedList>
  * 		<li>Item 1</li>
  * 		<li>Item 2</li>
  * 		<li>Item 3</li>
  * 	</OrderedList>
- * )
  */
 
 interface OrderedListProps {

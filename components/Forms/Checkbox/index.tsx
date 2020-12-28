@@ -2,25 +2,27 @@ import React from 'react';
 import styles from './Checkbox.module.css';
 
 /**
+ * @render react
  * @name Checkbox
- *
- * @param {string} props.id - ID do input
- * @param {string} props.value - Value do input
- * @param {string} props.defaultValue - Texto pré-definido para o input se o usuário puder mudar esse valor
- * @param {boolean} props.disabled - Se o input está desabilitado. Valor default é {false}
- * @param {boolean} props.checked - Se o input está marcado. Valor default é {false}
- * @param {boolean} props.defaultChecked - Se o input está inicialmente marcado. Valor default é {false}
- * @param {boolean} props.required - Se o input é obrigatório. Valor default é {false}
- * @param {number} props.tabIndex - tabindex do input
- * @param {string} props.name - name do input
- * @param {(event: React.ChangeEvent<HTMLInputElement>) => void} props.onChange - Função onChange do input
- * @param {(event: React.MouseEvent<HTMLInputElement>) => void} props.onClick - Função onClick do input
- *
+ * @description Input tipo checkbox, usado para questões de multipla escolha onde há a possibilidade de marcar mais de uma alterantiva ao mesmo tempo.
  * @component
  * @example
- * return(
- * 	<Checkbox id={1} name='rg-1' checked={true}>Input type checkbox</Checkbox>
- * )
+ * <Checkbox id={1} name='rg-1' checked={true}>Input type checkbox</Checkbox>
+ *
+ * @typedef {Object} Props
+ *
+ * @property {string} props.id - ID do input
+ * @property {string} props.value - Value do input
+ * @property {string} props.defaultValue - Texto pré-definido para o input se o usuário puder mudar esse valor
+ * @property {boolean} props.disabled - Se o input está desabilitado. Valor default é {false}
+ * @property {boolean} props.checked - Se o input está marcado. Valor default é {false}
+ * @property {boolean} props.defaultChecked - Se o input está inicialmente marcado. Valor default é {false}
+ * @property {boolean} props.required - Se o input é obrigatório. Valor default é {false}
+ * @property {number} props.tabIndex - tabindex do input
+ * @property {string} props.name - name do input
+ * @property {(event: React.ChangeEvent<HTMLInputElement>) => void} props.onChange - Função onChange do input
+ * @property {(event: React.MouseEvent<HTMLInputElement>) => void} props.onClick - Função onClick do input
+ *
  */
 
 interface CheckboxProps {
@@ -38,6 +40,9 @@ interface CheckboxProps {
 	onClick?: (event: React.MouseEvent<HTMLInputElement>) => void;
 }
 
+/**
+ * @param {Props} props
+ */
 const Checkbox: React.FC<CheckboxProps> = ({
 	children,
 	id,

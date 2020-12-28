@@ -4,18 +4,20 @@ import { useRouter } from 'next/router';
 import styles from './Pagination.module.css';
 
 /**
+ * @render react
  * @name Pagination
- *
- * @param {string} props.size - Tamanho do componente. O valor default é ''
- * @param {number} props.paginationNumber - Número da página atual. Serve apenas para forçar um número de paginação caso não haja query params de page
- * @param {number} props.paginationMin - Menor número do menu de paginação
- * @param {number} props.paginationMax - Maior número do menu de paginação
- *
+ * @description Navegação de paginação, mostrando quantas páginas há de conteúdo disponível para ser navegado. Esse componente irá checar se há a query **`page`** na URL, e irá gerar o número de páginas disponíveis baseado nessa numeração juntamente com as props **`paginationMin`** e **`paginationMax`**.
  * @component
  * @example
- * return(
- * 	<Pagination size='large' paginationMin={1} paginationMax={7}></Pagination>
- * )
+ * <Pagination size='large' paginationMin={1} paginationMax={7}></Pagination>
+ *
+ * @typedef {Object} Props
+ *
+ * @property {'small' | 'large'} [size] - Tamanho do componente. O valor default é ''
+ * @property {number} [paginationNumber] - Número da página atual. Serve apenas para forçar um número de paginação caso não haja query params de page
+ * @property {number} [paginationMin] - Menor número do menu de paginação
+ * @property {number} [paginationMax] - Maior número do menu de paginação
+ *
  */
 
 /** Array com os tamanhos disponíveis */
@@ -29,6 +31,9 @@ interface PaginationProps {
 	className?: string;
 }
 
+/**
+ * @param {Props} props
+ */
 const Pagination: React.FC<PaginationProps> = ({
 	children,
 	size,

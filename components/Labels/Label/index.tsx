@@ -2,17 +2,18 @@ import React from 'react';
 import styles from './Label.module.css';
 
 /**
+ * @render react
  * @name Label
- *
- * @param {string} props.style - Estilo da label. Se não definido, o default é 'prime'
- * @param {boolean} props.single - Se o botão tem conteúdo pequeno, como um número com até 2 algarismos
- *
+ * @description Usado para informar algo sobre um elemento ou notificar o usuário.
  * @component
  * @example
- * return(
- * 	<Label style='prime'>Info</Label>
- * 	<Label style='prime' single={true}>11</Label>
- * )
+ * <Label style='prime' single={true}>11</Label>
+ *
+ * @typedef {Object} Props
+ *
+ * @property {'prime' | 'second' | 'third' | 'warning' | 'right' | 'wrong'} [style] - Estilo da label. Se não definido, o default é 'prime'
+ * @property {boolean} [single] - Se o botão tem conteúdo pequeno, como um número com até 2 algarismos
+ *
  */
 
 // Array com os estilos disponíveis
@@ -24,6 +25,9 @@ interface LabelProps {
 	className?: string;
 }
 
+/**
+ * @param {Props} props
+ */
 const Label: React.FC<LabelProps> = ({
 	children,
 	style,

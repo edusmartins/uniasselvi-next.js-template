@@ -2,15 +2,17 @@ import React from 'react';
 import Link from 'next/link';
 
 /**
+ * @render react
  * @name CrumbsItem
- *
- * @param {string} props.href - Link do item
- *
+ * @description Navegação em migalhas de pão. Útil para o usuário receber um feedback visual de qual a profundidade que ele está dentro da aplicação. Usar em conjunto com o componente `<CrumbsList>`.
  * @component
  * @example
- * return(
- * 	<CrumbsItem href='/'>Início</CrumbsItem>
- * )
+ * <CrumbsItem href='/'>Início</CrumbsItem>
+ *
+ * @typedef {Object} Props
+ *
+ * @property {string} href - Link do item
+ *
  */
 
 interface CrumbsItemProps {
@@ -18,6 +20,9 @@ interface CrumbsItemProps {
 	className?: string;
 }
 
+/**
+ * @param {Props} props
+ */
 const CrumbsItem: React.FC<CrumbsItemProps> = ({
 	children,
 	href,

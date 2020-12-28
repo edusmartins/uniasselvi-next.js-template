@@ -2,25 +2,28 @@ import React from 'react';
 import styles from './IconButton.module.css';
 
 /**
+ * @render react
  * @name IconButton
- *
- * @param {string} props.style - Estilo do botão. Se não definido, o default é 'prime'
- * @param {string} props.size - Tamanho do botão. Se não definido, o default é null
- * @param {boolean} props.disabled - Se o botão está desabilitado. Se não definido, o default é {false}
- * @param {boolean} props.filled - Se o botão tem preenchimento. Se não definido, o default é {true}
- * @param {boolean} props.rounded - Se o botão tem bordas arredondadas. Se não definido, o default é {false}
- * @param {boolean} props.wide - Se o botão tem a classe .wide ou não. Se não definido, o default é {false}
- * @param {string} props.src - Caminho do ícone que o botão mostrará
- * @param {string} props.textBefore - Texto que será mostrado antes do ícone
- * @param {string} props.textAfter - Texto que será mostrado depois do ícone
- * @param {(event: React.MouseEvent<HTMLButtonElement>) => void} props.onClick - Função onClick do botão
- * @param {string} props.type - Tipo do botão. Valor default é 'button'
- *
+ * @description Botão com ícone dentro. Pode receber ou não texto também.
  * @component
  * @example
- * return(
- * 	<IconButton src='/img/ico/add.svg' rounded={true} style='prime' size='large' textAfter='Upload'></IconButton>
- * )
+ * <IconButton src='/img/ico/add.svg' rounded={true} style='prime' size='large' textAfter='Upload'></IconButton>
+ *
+ * @typedef {Object} Props
+ * 
+ * @property {'prime' | 'second' | 'third' | 'warning' | 'right' | 'wrong'} [style] - Estilo do botão. Se não definido, o default é `prime`
+ * @property {'small' | 'large'} [size] - Tamanho do botão. Se não definido, o default é `null`
+ * @property {boolean} [disabled] - Se o botão está desabilitado. Se não definido, o default é `{false}`
+ * @property {boolean} [filled] - Se o botão tem preenchimento. Se não definido, o default é `{true}`
+ * @property {boolean} [rounded] - Se o botão tem bordas arredondadas. Se não definido, o default é `{false}`
+ * @property {boolean} [wide] - Se o botão tem a classe .wide ou não. Se não definido, o default é `{false}`
+ * @property {string} src - Caminho do ícone que o botão mostrará
+ * @property {string} [textBefore] - Texto que será mostrado antes do ícone
+ * @property {string} [textAfter] - Texto que será mostrado depois do ícone
+ * @property {string} [type] - Tipo do botão. Valor default é `button`
+ * @property {function} onClick - Função `onClick` do botão
+ *
+ 
  */
 
 // Array com os estilos disponíveis
@@ -44,6 +47,9 @@ interface IconButtonProps {
 	className?: string;
 }
 
+/**
+ * @param {Props} props
+ */
 const IconButton: React.FC<IconButtonProps> = ({
 	children,
 	style,

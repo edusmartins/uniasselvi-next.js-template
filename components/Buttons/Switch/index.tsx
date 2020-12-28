@@ -2,26 +2,25 @@ import React from 'react';
 import styles from './Switch.module.css';
 
 /**
+ * @render react
  * @name Switch
- *
- * @param {string} props.size - Tamanho do switch. Se não definido, o default é ''
- * @param {boolean} props.disabled - Se o switch está desabilitado. Se não definido, o default é {false}
- * @param {boolean} props.checked - Se o botão está marcado. Se não definido, o default é {false}
- * @param {boolean} props.defaultChecked - Se o input está inicialmente marcado. Valor default é {false}
- * @param {boolean} props.rounded - Se o botão tem bordas arredondadas. Se não definido, o default é {false}
- * @param {string} props.value - valor do input
- * @param {string} props.defaultValue - Texto pré-definido para o input se o usuário puder mudar esse valor
- * @param {(event: React.ChangeEvent<HTMLInputElement>) => void} props.onChange - Função onChange do input checkbox dentro do componente
- * @param {(event: React.MouseEvent<HTMLInputElement>) => void} props.onClick - Função onClick do input
- *
+ * @description Toogle Switch simples, usado para que o usuário possa habilitar ou desabilitar algo dentro da aplicação.
  * @component
  * @example
+ * <Switch checked={true} rounded={true}></Switch>
  *
- * Esse componente retorna um input type=checkbox
+ * @typedef {Object} Props
  *
- * return(
- * 	<Switch checked={true} rounded={true}></Switch>
- * )
+ * @property {'small' | 'large'} [size] - Tamanho do switch. Se não definido, o default é ''
+ * @property {boolean} [disabled] - Se o switch está desabilitado. Se não definido, o default é `{false}`
+ * @property {boolean} [checked] - Se o botão está marcado. Se não definido, o default é `{false}`
+ * @property {boolean} [defaultChecked] - Se o input está inicialmente marcado. Valor default é `{false}`
+ * @property {boolean} [rounded] - Se o botão tem bordas arredondadas. Se não definido, o default é `{false}`
+ * @property {string} [value] - valor do input
+ * @property {string} [defaultValue] - Texto pré-definido para o input se o usuário puder mudar esse valor
+ * @property {function} [onChange] - Função `onChange` do input checkbox dentro do componente
+ * @property {function} [onClick] - Função `onClick` do input
+ *
  */
 
 // Array com os tamanhos disponíveis
@@ -40,6 +39,9 @@ interface SwitchProps {
 	className?: string;
 }
 
+/**
+ * @param {Props} props
+ */
 const Switch: React.FC<SwitchProps> = ({
 	children,
 	size,

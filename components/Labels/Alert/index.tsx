@@ -2,17 +2,19 @@ import React, { useState } from 'react';
 import styles from './Alert.module.css';
 
 /**
+ * @render react
  * @name Alert
- *
- * @param {string} props.style - Estilo da alerta. Se não definido, o default é 'prime'
- * @param {string} props.title - Título do alerta
- * @param {string} props.message - Mensagem do alerta
- *
+ * @description Usado para informar e/ou alertar o usuário sobre algo da aplicação, como, por exemplo, um erro, aviso, mensagem de sucesso, etc.
  * @component
  * @example
- * return(
  * <Alert title='Atenção' message='Mensagem de aviso' style='warning' />
- * )
+ *
+ * @typedef {Object} Props
+ *
+ * @property {'prime' | 'warning' | 'right' | 'wrong'} [style] - Estilo da alerta. Se não definido, o default é 'prime'
+ * @property {string} [title] - Título do alerta
+ * @property {string} message - Mensagem do alerta
+ *
  */
 
 // Array com os estilos disponíveis
@@ -25,6 +27,9 @@ interface AlertProps {
 	className?: string;
 }
 
+/**
+ * @param {Props} props
+ */
 const Alert: React.FC<AlertProps> = ({
 	children,
 	style,

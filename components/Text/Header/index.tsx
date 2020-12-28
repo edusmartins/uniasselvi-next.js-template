@@ -2,15 +2,17 @@ import React from 'react';
 import styles from './Header.module.css';
 
 /**
+ * @render react
  * @name Header
- *
- * @param {string} props.size - Tamanho do header. Se não definido, o default é 'h1'
- *
+ * @description Título das páginas. Podem ter tamanhos variados dependento da seção que o título se encontra.
  * @component
  * @example
- * return(
- * 	<Header size='h1'>Meu Título</Header>
- * )
+ * <Header size='h1'>Meu Título</Header>
+ *
+ * @typedef {Object} Props
+ *
+ * @property {'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'} [size] - Tamanho do header. Se não definido, o default é 'h1'
+ *
  */
 
 interface HeaderProps {
@@ -19,6 +21,9 @@ interface HeaderProps {
 	ref?: any;
 }
 
+/**
+ * @param {Props} props
+ */
 const Header: React.FC<HeaderProps> = ({
 	children,
 	size,

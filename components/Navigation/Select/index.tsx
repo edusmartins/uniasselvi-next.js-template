@@ -2,17 +2,19 @@ import React from 'react';
 import styles from './Select.module.css';
 
 /**
+ * @render react
  * @name Select
- *
- * @param {string} props.id - id do select
- * @param {string} props.name - name do select
- * @param {string} props.placeHolder - placeholder do select
- *
+ * @description Select simples. Usado para que o usuário possa escolher uma opção dentre diversas.
  * @component
  * @example
- * return(
- * 	<Select></Select>
- * )
+ * <Select></Select>
+ *
+ * @typedef {Object} Props
+ *
+ * @property {string} [id] - id do select
+ * @property {string} [name] - name do select
+ * @property {string} [placeHolder] - placeholder do select
+ *
  */
 
 interface SelectProps {
@@ -22,8 +24,9 @@ interface SelectProps {
 	className?: string;
 }
 
-//TODO: Fazer um novo select usando input
-
+/**
+ * @param {Props} props
+ */
 const Select: React.FC<SelectProps> = ({
 	children,
 	id,

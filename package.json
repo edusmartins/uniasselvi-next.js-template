@@ -8,6 +8,8 @@
 		"start": "next start"
 	},
 	"dependencies": {
+		"better-docs": "^2.3.2",
+		"jsdoc": "^3.6.6",
 		"next": "9.5.3",
 		"react": "16.13.1",
 		"react-dom": "16.13.1"

@@ -2,27 +2,32 @@ import React from 'react';
 import styles from './Range.module.css';
 
 /**
+ * @render react
  * @name Range
- *
- * @param {string} props.style - Estilo do input. Se não definido, o default é ''
- * @param {boolean} props.filled - Se o botão é preenchido. Se não definido, o default é {false}
- *
+ * @description Input tipo range, usado para medir o nível de algo, o quanto que a resposta tende mais para um dos lados.
  * @component
  * @example
- * return(
  * <Range filled={true} style='prime' />
- * )
+ *
+ * @typedef {Object} Props
+ *
+ * @property {'prime' | 'second' | 'third' | 'right' | 'wrong'} [style] - Estilo do input. Se não definido, o default é ''
+ * @property {boolean} [filled] - Se o botão é preenchido. Se não definido, o default é `{false}`
+ *
  */
 
 // Array com os estilos disponíveis
 const STYLES = ['prime', 'second', 'third', 'right', 'wrong'];
 
 interface RangeProps {
-	style?: string;
+	style?: 'prime' | 'second' | 'third' | 'right' | 'wrong';
 	filled?: boolean;
 	className?: string;
 }
 
+/**
+ * @param {Props} props
+ */
 const Range: React.FC<RangeProps> = ({
 	children,
 	style,

@@ -2,17 +2,18 @@ import React from 'react';
 import styles from './UnorderedList.module.css';
 
 /**
- * @name UnorderedList
  *
+ * @render react
+ * @name UnorderedList
+ * @description Componente de lista não ordenada. Recebe `<li>` tags como children.
  * @component
  * @example
- * return(
  * 	<UnorderedList>
  * 		<li>Item 1</li>
  * 		<li>Item 2</li>
  * 		<li>Item 3</li>
  * 	</UnorderedList>
- * )
+ *
  */
 
 interface UnorderedListProps {
