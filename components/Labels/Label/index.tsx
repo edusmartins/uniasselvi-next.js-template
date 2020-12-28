@@ -1,9 +1,11 @@
 import React from 'react';
-
 import styles from './Label.module.css';
 
 /**
- * Label
+ * @name Label
+ *
+ * @param {string} props.style - Estilo da label. Se não definido, o default é 'prime'
+ * @param {boolean} props.single - Se o botão tem conteúdo pequeno, como um número com até 2 algarismos
  *
  * @component
  * @example
@@ -13,19 +15,11 @@ import styles from './Label.module.css';
  * )
  */
 
-/** Array com os estilos disponíveis */
+// Array com os estilos disponíveis
 const STYLES = ['prime', 'second', 'third', 'warning', 'right', 'wrong'];
 
 interface LabelProps {
-	/**
-	 * Estilo da label. Se não definido, o default é 'prime'
-	 * @type {string}
-	 */
-	style?: string;
-	/**
-	 * Se o botão tem conteúdo pequeno, como um número com até 2 algarismos.
-	 * @type {boolean}
-	 */
+	style?: 'prime' | 'second' | 'third' | 'warning' | 'right' | 'wrong';
 	single?: boolean;
 	className?: string;
 }

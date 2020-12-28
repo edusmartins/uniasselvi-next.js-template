@@ -1,9 +1,8 @@
 import React from 'react';
-
 import styles from './UnorderedList.module.css';
 
 /**
- * OrderedList
+ * @name UnorderedList
  *
  * @component
  * @example

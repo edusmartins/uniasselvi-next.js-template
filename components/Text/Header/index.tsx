@@ -1,9 +1,10 @@
 import React from 'react';
-
 import styles from './Header.module.css';
 
 /**
- * Switch
+ * @name Header
+ *
+ * @param {string} props.size - Tamanho do header. Se não definido, o default é 'h1'
  *
  * @component
  * @example
@@ -13,10 +14,6 @@ import styles from './Header.module.css';
  */
 
 interface HeaderProps {
-	/**
-	 * Tamanho do switch. Se não definido, o default é 'h1'
-	 * @type {string}
-	 */
 	size?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 	className?: string;
 	ref?: any;

@@ -2,7 +2,9 @@ import React from 'react';
 import Link from 'next/link';
 
 /**
- * CrumbsItem
+ * @name CrumbsItem
+ *
+ * @param {string} props.href - Link do item
  *
  * @component
  * @example
@@ -12,10 +14,6 @@ import Link from 'next/link';
  */
 
 interface CrumbsItemProps {
-	/**
-	 * Link do crumb
-	 * @type {string}
-	 */
 	href: string;
 	className?: string;
 }

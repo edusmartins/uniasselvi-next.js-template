@@ -1,9 +1,20 @@
 import React from 'react';
-
 import styles from './IconButton.module.css';
 
 /**
- * IconButton
+ * @name IconButton
+ *
+ * @param {string} props.style - Estilo do botão. Se não definido, o default é 'prime'
+ * @param {string} props.size - Tamanho do botão. Se não definido, o default é null
+ * @param {boolean} props.disabled - Se o botão está desabilitado. Se não definido, o default é {false}
+ * @param {boolean} props.filled - Se o botão tem preenchimento. Se não definido, o default é {true}
+ * @param {boolean} props.rounded - Se o botão tem bordas arredondadas. Se não definido, o default é {false}
+ * @param {boolean} props.wide - Se o botão tem a classe .wide ou não. Se não definido, o default é {false}
+ * @param {string} props.src - Caminho do ícone que o botão mostrará
+ * @param {string} props.textBefore - Texto que será mostrado antes do ícone
+ * @param {string} props.textAfter - Texto que será mostrado depois do ícone
+ * @param {(event: React.MouseEvent<HTMLButtonElement>) => void} props.onClick - Função onClick do botão
+ * @param {string} props.type - Tipo do botão. Valor default é 'button'
  *
  * @component
  * @example
@@ -12,72 +23,24 @@ import styles from './IconButton.module.css';
  * )
  */
 
-/** Array com os estilos disponíveis */
+// Array com os estilos disponíveis
 const STYLES = ['prime', 'second', 'third', 'warning', 'right', 'wrong'];
 
-/** Array com os tamanhos disponíveis */
+// Array com os tamanhos disponíveis
 const SIZES = ['small', 'large'];
 
 interface IconButtonProps {
-	/**
-	 * Estilo do botão. Se não definido, o default é 'prime'
-	 * @type {string}
-	 */
 	style?: 'prime' | 'second' | 'third' | 'warning' | 'right' | 'wrong';
-	/**
-	 * Tamanho do botão. Se não definido, o default é null
-	 * @type {string}
-	 */
 	size?: 'small' | 'large';
-	/**
-	 * Se o botão está desabilitado. Se não definido, o default é {false}
-	 * @type {boolean}
-	 */
 	disabled?: boolean;
-	/**
-	 * Se o botão tem preenchimento. Se não definido, o default é {true}
-	 * @type {boolean}
-	 */
 	filled?: boolean;
-	/**
-	 * Se o botão tem bordas arredondadas. Se não definido, o default é {false}
-	 * @type {boolean}
-	 */
 	rounded?: boolean;
-	/**
-	 * Se o botão tem a classe .wide ou não. Se não definido, o default é {false}
-	 * @type {boolean}
-	 */
 	wide?: boolean;
-	/**
-	 * Caminho do ícone que o botão mostrará
-	 * @type {string}
-	 */
 	src: string;
-	/**
-	 * Texto que será mostrado antes do ícone
-	 * @type {string}
-	 */
 	textBefore?: string;
-	/**
-	 * Texto que será mostrado depois do ícone
-	 * @type {string}
-	 */
 	textAfter?: string;
-	/**
-	 * Função onClick do botão
-	 * @type {Function}
-	 */
 	onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
-	/**
-	 * Tipo do botão. Valor default é 'button'.
-	 * @type {string}
-	 */
 	type?: 'button' | 'submit' | 'reset';
-	/**
-	 * className do botão.
-	 * @type {string}
-	 */
 	className?: string;
 }
 

@@ -1,7 +1,19 @@
+import React from 'react';
 import styles from './Radio.module.css';
 
 /**
- * Radio
+ * @name Radio
+ *
+ * @param {string} props.id - ID do input
+ * @param {string} props.name - Name do input
+ * @param {boolean} props.disabled - Se o input está desabilitado. Valor default é {false}
+ * @param {boolean} props.checked - Se o input está marcado. Valor default é {false}
+ * @param {boolean} props.defaultChecked - Se o input está inicialmente marcado. Valor default é {false}
+ * @param {boolean} props.required - Se o input é obrigatório
+ * @param {string} props.value - Value do input
+ * @param {string} props.defaultValue - Texto pré-definido para o input se o usuário puder mudar esse valor
+ * @param {(event: React.ChangeEvent<HTMLInputElement>) => void} props.onChange - Função onChange do input
+ * @param {(event: React.MouseEvent<HTMLInputElement>) => void} props.onClick - Função onClick do input
  *
  * @component
  * @example
@@ -11,60 +23,16 @@ import styles from './Radio.module.css';
  */
 
 interface RadioProps {
-	/**
-	 * ID do input
-	 * @type {string}
-	 */
 	id: string;
-	/**
-	 * Name do input
-	 * @type {string}
-	 */
 	name?: string;
-	/**
-	 * Se o input está desabilitado. Valor default é {false}
-	 * @type {boolean}
-	 */
 	disabled?: boolean;
-	/**
-	 * Se o input está marcado. Valor default é {false}
-	 * @type {boolean}
-	 */
 	checked?: boolean;
-	/**
-	 * Se o input está inicialmente marcado. Valor default é {false}
-	 * @type {boolean}
-	 */
 	defaultChecked?: boolean;
-	/**
-	 * Se o input é obrigatório.
-	 * @type {boolean}
-	 */
 	required?: boolean;
-	/**
-	 * Value do input
-	 * @type {string}
-	 */
 	value?: string;
-	/**
-	 * Texto pré-definido para o input se o usuário puder mudar esse valor.
-	 * @type {string}
-	 */
 	defaultValue?: string;
-	/**
-	 * className do input
-	 * @type {string}
-	 */
 	className?: string;
-	/**
-	 * Função onChange do input
-	 * @type {Function}
-	 */
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-	/**
-	 * Função onClick do input
-	 * @type {Function}
-	 */
 	onClick?: (event: React.MouseEvent<HTMLInputElement>) => void;
 }
 

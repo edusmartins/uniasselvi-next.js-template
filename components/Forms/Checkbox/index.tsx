@@ -1,7 +1,20 @@
+import React from 'react';
 import styles from './Checkbox.module.css';
 
 /**
- * Checkbox
+ * @name Checkbox
+ *
+ * @param {string} props.id - ID do input
+ * @param {string} props.value - Value do input
+ * @param {string} props.defaultValue - Texto pré-definido para o input se o usuário puder mudar esse valor
+ * @param {boolean} props.disabled - Se o input está desabilitado. Valor default é {false}
+ * @param {boolean} props.checked - Se o input está marcado. Valor default é {false}
+ * @param {boolean} props.defaultChecked - Se o input está inicialmente marcado. Valor default é {false}
+ * @param {boolean} props.required - Se o input é obrigatório. Valor default é {false}
+ * @param {number} props.tabIndex - tabindex do input
+ * @param {string} props.name - name do input
+ * @param {(event: React.ChangeEvent<HTMLInputElement>) => void} props.onChange - Função onChange do input
+ * @param {(event: React.MouseEvent<HTMLInputElement>) => void} props.onClick - Função onClick do input
  *
  * @component
  * @example
@@ -11,70 +24,17 @@ import styles from './Checkbox.module.css';
  */
 
 interface CheckboxProps {
-	/**
-	 * ID do input
-	 * @type {string}
-	 */
 	id?: string;
-	/**
-	 * Value do input
-	 * @type {string}
-	 */
 	value?: string;
-	/**
-	 * Texto pré-definido para o input se o usuário puder mudar esse valor.
-	 * @type {string}
-	 */
 	defaultValue?: string;
-	/**
-	 * Ref para useRef
-	 * @type {any}
-	 */
-	ref?: any;
-	/**
-	 * Se o input está desabilitado. Valor default é {false}
-	 * @type {boolean}
-	 */
 	disabled?: boolean;
-	/**
-	 * Se o input está marcado. Valor default é {false}
-	 * @type {boolean}
-	 */
 	checked?: boolean;
-	/**
-	 * Se o input está inicialmente marcado. Valor default é {false}
-	 * @type {boolean}
-	 */
 	defaultChecked?: boolean;
-	/**
-	 * Se o input é obrigatório. Valor default é {false}
-	 * @type {boolean}
-	 */
 	required?: boolean;
-	/**
-	 * tabindex do input
-	 * @type {number}
-	 */
 	tabIndex?: number;
-	/**
-	 * name do input
-	 * @type {string}
-	 */
 	name?: string;
-	/**
-	 * className do componente
-	 * @type {string}
-	 */
 	className?: string;
-	/**
-	 * Função onChange do input
-	 * @type {Function}
-	 */
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-	/**
-	 * Função onClick do input
-	 * @type {Function}
-	 */
 	onClick?: (event: React.MouseEvent<HTMLInputElement>) => void;
 }
 
@@ -83,7 +43,6 @@ const Checkbox: React.FC<CheckboxProps> = ({
 	id,
 	value,
 	defaultValue,
-	ref,
 	disabled,
 	checked,
 	defaultChecked,
@@ -106,7 +65,6 @@ const Checkbox: React.FC<CheckboxProps> = ({
 				tabIndex={tabIndex}
 				disabled={disabled}
 				required={required}
-				ref={ref}
 				checked={checked}
 				defaultChecked={defaultChecked}
 				onChange={onChange}

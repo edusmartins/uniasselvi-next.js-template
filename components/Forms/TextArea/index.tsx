@@ -1,9 +1,26 @@
 import React, { useState } from 'react';
-
 import styles from './TextArea.module.css';
 
 /**
- * TextArea
+ * @name TextArea
+ *
+ * @param {string} props.style - Estilo da textarea. Se não definido, o default é ''
+ * @param {string} props.name - Nome da textarea
+ * @param {string} props.id - ID da textarea
+ * @param {string} props.placeHolder - Texto da textarea antes de receber algum valor
+ * @param {string} props.value - Texto pré-definido para a textarea
+ * @param {string} props.defaultValue - Texto pré-definido para o input se o usuário puder mudar esse valor
+ * @param {string} props.form - Nome do formulário do qual a textarea faz parte
+ * @param {string} props.wrap - Wrap da textarea
+ * @param {number} props.cols - Colunas da textarea
+ * @param {number} props.rows - Linhas da textarea
+ * @param {number} props.minLenght - Comprimento mínimo do texto
+ * @param {number} props.maxLenght - Comprimento máximo do texto
+ * @param {boolean} props.required - Se a textarea é obrigatória a ser preenchida. Valor default é {false}
+ * @param {boolean} props.readOnly - Se a textarea é apenas para leitura. Valor default é {false}
+ * @param {boolean} props.disabled - Se a textarea está desabilitado. Valor default é {false}
+ * @param {boolean} props.autoFocus - Se a textarea entrará em foco quando a página carregar. Valor default é {false}
+ * @param {boolean} props.resize - Se o resize da textarea está habilitado. Valor default é {false}
  *
  * @component
  * @example
@@ -12,97 +29,29 @@ import styles from './TextArea.module.css';
  * )
  */
 
-/** Array com os estilos disponíveis */
+// Array com os estilos disponíveis
 const STYLES = ['done', 'wrong'];
 
-/** Array com os estilos disponíveis */
+// Array com os wrap disponíveis
 const WRAP = ['soft', 'hard'];
 
 interface TextAreaProps {
-	/**
-	 * Estilo da textarea. Se não definido, o default é ''.
-	 * @type {string}
-	 */
 	style?: string;
-	/**
-	 * Nome da textarea
-	 * @type {string}
-	 */
 	name?: string;
-	/**
-	 * ID da textarea
-	 * @type {string}
-	 */
 	id?: string;
-	/**
-	 * Texto da textarea antes de receber algum valor.
-	 * @type {string}
-	 */
-	placeholder?: string;
-	/**
-	 * Texto pré-definido para a textarea.
-	 * @type {string}
-	 */
+	placeHolder?: string;
 	value?: string;
-	/**
-	 * Texto pré-definido para o input se o usuário puder mudar esse valor.
-	 * @type {string}
-	 */
 	defaultValue?: string;
-	/**
-	 * Nome do formulário do qual a textarea faz parte
-	 * @type {string}
-	 */
 	form?: string;
-	/**
-	 * Wrap da textarea
-	 * @type {string}
-	 */
 	wrap?: string;
-	/**
-	 * Colunas da textarea
-	 * @type {number}
-	 */
 	cols?: number;
-	/**
-	 * Linhas da textarea
-	 * @type {number}
-	 */
 	rows?: number;
-	/**
-	 * Comprimento mínimo do texto
-	 * @type {number}
-	 */
 	minLenght?: number;
-	/**
-	 * Comprimento máximo do texto
-	 * @type {number}
-	 */
 	maxLenght?: number;
-	/**
-	 * Se a textarea é obrigatória a ser preenchida. Valor default é {false}
-	 * @type {boolean}
-	 */
 	required?: boolean;
-	/**
-	 * Se a textarea é apenas para leitura. Valor default é {false}
-	 * @type {boolean}
-	 */
 	readOnly?: boolean;
-	/**
-	 * Se a textarea está desabilitado. Valor default é {false}.
-	 * @type {boolean}
-	 */
 	disabled?: boolean;
-	/**
-	 * Se a textarea entrará em foco quando a página carregar. Valor default é {false}.
-	 * @type {boolean}
-	 */
 	autoFocus?: boolean;
-	/**
-	 * Se o resize da textarea está habilitado. Valor default é {false}.
-	 * @type {boolean}
-	 */
 	resize?: boolean;
 	className?: string;
 }
@@ -112,7 +61,7 @@ const TextArea: React.FC<TextAreaProps> = ({
 	style,
 	name,
 	id,
-	placeholder,
+	placeHolder,
 	value,
 	form,
 	wrap,
@@ -151,7 +100,7 @@ const TextArea: React.FC<TextAreaProps> = ({
 				name={name}
 				id={id}
 				cols={cols}
-				placeholder={placeholder}
+				placeholder={placeHolder}
 				value={value}
 				form={form}
 				wrap={wrap}

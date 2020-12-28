@@ -1,0 +1,122 @@
+.input {
+
+	padding: 0.5em 1em;
+
+	color: var(--cinza-muito-escuro);
+
+	border: 2px solid var(--cinza-medio);
+
+	border-radius: 5px;
+
+	font-family: inherit;
+
+	font-size: 1em;
+
+}
+
+
+
+.input::placeholder {
+
+	color: var(--cinza-medio-escuro);
+
+}
+
+
+
+.input:hover {
+
+	border-color: var(--cinza-medio-escuro);
+
+}
+
+
+
+.input:focus {
+
+	border-color: var(--seleções) !important;
+
+	/* color: inherit !important; */
+
+	background: var(--branco);
+
+	outline: none;
+
+}
+
+
+
+.input:disabled {
+
+	opacity: 0.5;
+
+	pointer-events: none;
+
+}
+
+
+
+.input.done {
+
+	border-color: var(--cinza-muito-escuro);
+
+}
+
+.input.warning {
+
+	border-color: var(--aviso);
+
+	color: var(--aviso);
+
+}
+
+.input.right {
+
+	border-color: var(--acerto);
+
+	color: var(--acerto);
+
+}
+
+.input.wrong {
+
+	border-color: var(--erro);
+
+	color: var(--erro);
+
+}
+
+
+
+.input_wrapper {
+
+	position: relative;
+
+	display: flex;
+
+	align-items: center;
+
+}
+
+
+
+.input_wrapper img {
+
+	position: absolute;
+
+	left: 1em;
+
+	height: 1em;
+
+}
+
+
+
+.input_wrapper img + .input {
+
+	padding-left: 3em;
+
+	margin: 0;
+
+}
+

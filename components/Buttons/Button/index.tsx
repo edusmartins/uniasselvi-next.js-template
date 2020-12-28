@@ -2,7 +2,14 @@ import React from 'react';
 import styles from './Button.module.css';
 
 /**
- * Button
+ * @name Button
+ *
+ * @param {string} props.size - Tamanho do botão. Se não definido, o default é null
+ * @param {boolean} props.filled - Se o botão é preenchido. Se não definido, o default é {false}
+ * @param {boolean} props.disabled - Se o botão está desabilitado. Se não definido, o default é {false}
+ * @param {boolean} props.rounded - Se o botão tem bordas arredondadas. Se não definido, o default é {false}
+ * @param {(event: React.MouseEvent<HTMLButtonElement>) => void} props.onClick - Função onClick do botão
+ * @param {string} props.type - Tipo do botão. Valor default é 'button'
  *
  * @component
  * @example
@@ -11,44 +18,20 @@ import styles from './Button.module.css';
  * )
  */
 
-/** Array com os estilos disponíveis */
+// Array com os estilos disponíveis
 const STYLES = ['prime', 'second', 'third', 'warning', 'right', 'wrong'];
 
-/** Array com os tamanhos disponíveis */
+// Array com os tamanhos disponíveis
 const SIZES = ['small', 'large'];
 
 interface ButtonProps {
-	/**
-	 * @param {string} props.style - Estilo do botão. Se não definido, o default é 'prime'
-	 */
 	style?: 'prime' | 'second' | 'third' | 'warning' | 'right' | 'wrong';
-	/**
-	 * @param {string} props.size - Tamanho do botão. Se não definido, o default é null
-	 */
 	size?: 'small' | 'large';
-	/**
-	 * @param {boolean} props.filled - Se o botão é preenchido. Se não definido, o default é {false}
-	 */
 	filled?: boolean;
-	/**
-	 * @param {boolean} props.disabled - Se o botão está desabilitado. Se não definido, o default é {false}
-	 */
 	disabled?: boolean;
-	/**
-	 * @param {boolean} props.rounded - Se o botão tem bordas arredondadas. Se não definido, o default é {false}
-	 */
 	rounded?: boolean;
-	/**
-	 * @param {Function} props.onClick - Função onClick do botão
-	 */
 	onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
-	/**
-	 * @param {string} props.type - Tipo do botão. Valor default é 'button'
-	 */
 	type?: 'button' | 'submit' | 'reset';
-	/**
-	 * @param {string} props.className - className do botão
-	 */
 	className?: string;
 }
 

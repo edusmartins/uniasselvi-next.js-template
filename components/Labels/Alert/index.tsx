@@ -1,9 +1,12 @@
-import { useState } from 'react';
-
+import React, { useState } from 'react';
 import styles from './Alert.module.css';
 
 /**
- * Alert
+ * @name Alert
+ *
+ * @param {string} props.style - Estilo da alerta. Se não definido, o default é 'prime'
+ * @param {string} props.title - Título do alerta
+ * @param {string} props.message - Mensagem do alerta
  *
  * @component
  * @example
@@ -12,30 +15,13 @@ import styles from './Alert.module.css';
  * )
  */
 
-/** Array com os estilos disponíveis */
+// Array com os estilos disponíveis
 const STYLES = ['prime', 'warning', 'right', 'wrong'];
 
 interface AlertProps {
-	/**
-	 * Estilo da alerta. Se não definido, o default é 'prime'.
-	 * @type {string}
-	 */
-	style?: string;
-	/**
-	 * Título do alerta.
-	 * @type {string}
-	 */
+	style?: 'prime' | 'warning' | 'right' | 'wrong';
 	title?: string;
-	/**
-	 * Mensagem do alerta.
-	 * @type {string}
-	 */
 	message: string;
-	/**
-	 * Função onClick do botão de fechar.
-	 * @type {Function}
-	 */
-	onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 	className?: string;
 }
 
@@ -44,7 +30,6 @@ const Alert: React.FC<AlertProps> = ({
 	style,
 	title,
 	message,
-	onClick,
 	className,
 	...rest
 }) => {

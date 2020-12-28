@@ -1,0 +1,72 @@
+.label {
+
+	padding: 0.5em 1em;
+
+	color: var(--branco);
+
+	border-radius: 5px;
+
+	width: fit-content;
+
+	height: fit-content;
+
+}
+
+
+
+.label.single {
+
+	padding: 0.5em;
+
+}
+
+
+
+.label.prime {
+
+	background: var(--cinza-muito-escuro);
+
+}
+
+
+
+.label.warning {
+
+	background: var(--aviso);
+
+}
+
+
+
+.label.right {
+
+	background: var(--acerto);
+
+}
+
+
+
+.label.wrong {
+
+	background: var(--erro);
+
+}
+
+
+
+.label.second {
+
+	background: var(--amarelo);
+
+	color: var(--preto);
+
+}
+
+.label.third {
+
+	background: var(--verde-nao-ouse);
+
+	color: var(--branco);
+
+}
+

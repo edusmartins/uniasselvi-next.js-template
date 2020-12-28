@@ -1,24 +1,25 @@
 import Head from 'next/head';
 import { useState } from 'react';
 
-import Header from '../components/Text/Header';
-import OrderedList from '../components/Text/OrderedList';
-import UnorderedList from '../components/Text/UnorderedList';
-import Button from '../components/Buttons/Button';
-import IconButton from '../components/Buttons/IconButton';
-import Switch from '../components/Buttons/Switch';
-import Radio from '../components/Forms/Radio';
-import Checkbox from '../components/Forms/Checkbox';
-import Select from '../components/Navigation/Select';
-import Pagination from '../components/Navigation/Pagination';
-import CrumbsList from '../components/Navigation/CrumbsList';
-import CrumbsItem from '../components/Navigation/CrumbsItem';
-import Label from '../components/Labels/Label';
-import Alert from '../components/Labels/Alert';
-import Input from '../components/Forms/Input';
-import TextArea from '../components/Forms/TextArea';
-import Range from '../components/Forms/Range';
-import { truncate } from 'fs';
+import {
+	Header,
+	OrderedList,
+	UnorderedList,
+	Button,
+	IconButton,
+	Switch,
+	Radio,
+	Checkbox,
+	Select,
+	Pagination,
+	CrumbsList,
+	CrumbsItem,
+	Label,
+	Alert,
+	Input,
+	TextArea,
+	Range,
+} from '../components';
 
 export default function Home() {
 	const [switch1, setSwitch1] = useState(false);
@@ -526,22 +527,70 @@ export default function Home() {
 					className='grid-6'
 					id='botoes_quadrados_com_preenchimento_large_disabled'
 				>
-					<Button filled={true} style='warning' size='large' disabled={true}>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						filled={true}
+						style='warning'
+						size='large'
+						disabled={true}
+					>
 						Aviso
 					</Button>
-					<Button filled={true} style='right' size='large' disabled={true}>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						filled={true}
+						style='right'
+						size='large'
+						disabled={true}
+					>
 						Acerto
 					</Button>
-					<Button filled={true} style='wrong' size='large' disabled={true}>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						filled={true}
+						style='wrong'
+						size='large'
+						disabled={true}
+					>
 						Erro
 					</Button>
-					<Button filled={true} style='prime' size='large' disabled={true}>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						filled={true}
+						style='prime'
+						size='large'
+						disabled={true}
+					>
 						Primário
 					</Button>
-					<Button filled={true} style='second' size='large' disabled={true}>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						filled={true}
+						style='second'
+						size='large'
+						disabled={true}
+					>
 						Secundário
 					</Button>
-					<Button filled={true} style='third' size='large' disabled={true}>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						filled={true}
+						style='third'
+						size='large'
+						disabled={true}
+					>
 						Terciário
 					</Button>
 				</div>
@@ -832,62 +881,182 @@ export default function Home() {
 				<br />
 				{/* //Botões redondos sem preenchimento */}
 				<div className='grid-6' id='botoes_redondos_sem_preenchimento_small'>
-					<Button rounded={true} style='warning' size='small'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						style='warning'
+						size='small'
+					>
 						Aviso
 					</Button>
-					<Button rounded={true} style='right' size='small'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						style='right'
+						size='small'
+					>
 						Acerto
 					</Button>
-					<Button rounded={true} style='wrong' size='small'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						style='wrong'
+						size='small'
+					>
 						Erro
 					</Button>
-					<Button rounded={true} style='prime' size='small'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						style='prime'
+						size='small'
+					>
 						Primário
 					</Button>
-					<Button rounded={true} style='second' size='small'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						style='second'
+						size='small'
+					>
 						Secundário
 					</Button>
-					<Button rounded={true} style='third' size='small'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						style='third'
+						size='small'
+					>
 						Terciário
 					</Button>
 				</div>
 				<div className='grid-6' id='botoes_redondos_sem_preenchimento_default'>
-					<Button rounded={true} style='warning'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						style='warning'
+					>
 						Aviso
 					</Button>
-					<Button rounded={true} style='right'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						style='right'
+					>
 						Acerto
 					</Button>
-					<Button rounded={true} style='wrong'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						style='wrong'
+					>
 						Erro
 					</Button>
-					<Button rounded={true} style='prime'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						style='prime'
+					>
 						Primário
 					</Button>
-					<Button rounded={true} style='second'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						style='second'
+					>
 						Secundário
 					</Button>
-					<Button rounded={true} style='third'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						style='third'
+					>
 						Terciário
 					</Button>
 				</div>
 				<div className='grid-6' id='botoes_redondos_sem_preenchimento_large'>
-					<Button rounded={true} style='warning' size='large'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						style='warning'
+						size='large'
+					>
 						Aviso
 					</Button>
-					<Button rounded={true} style='right' size='large'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						style='right'
+						size='large'
+					>
 						Acerto
 					</Button>
-					<Button rounded={true} style='wrong' size='large'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						style='wrong'
+						size='large'
+					>
 						Erro
 					</Button>
-					<Button rounded={true} style='prime' size='large'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						style='prime'
+						size='large'
+					>
 						Primário
 					</Button>
-					<Button rounded={true} style='second' size='large'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						style='second'
+						size='large'
+					>
 						Secundário
 					</Button>
-					<Button rounded={true} style='third' size='large'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						style='third'
+						size='large'
+					>
 						Terciário
 					</Button>
 				</div>
@@ -895,22 +1064,70 @@ export default function Home() {
 					className='grid-6'
 					id='botoes_redondos_sem_preenchimento_large_disabled'
 				>
-					<Button rounded={true} style='warning' size='large' disabled={true}>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						style='warning'
+						size='large'
+						disabled={true}
+					>
 						Aviso
 					</Button>
-					<Button rounded={true} style='right' size='large' disabled={true}>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						style='right'
+						size='large'
+						disabled={true}
+					>
 						Acerto
 					</Button>
-					<Button rounded={true} style='wrong' size='large' disabled={true}>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						style='wrong'
+						size='large'
+						disabled={true}
+					>
 						Erro
 					</Button>
-					<Button rounded={true} style='prime' size='large' disabled={true}>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						style='prime'
+						size='large'
+						disabled={true}
+					>
 						Primário
 					</Button>
-					<Button rounded={true} style='second' size='large' disabled={true}>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						style='second'
+						size='large'
+						disabled={true}
+					>
 						Secundário
 					</Button>
-					<Button rounded={true} style='third' size='large' disabled={true}>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						style='third'
+						size='large'
+						disabled={true}
+					>
 						Terciário
 					</Button>
 				</div>
@@ -918,62 +1135,200 @@ export default function Home() {
 				<br />
 				{/* //Botões redondos com preenchimento */}
 				<div className='grid-6' id='botoes_redondos_com_preenchimento_small'>
-					<Button rounded={true} filled={true} style='warning' size='small'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						filled={true}
+						style='warning'
+						size='small'
+					>
 						Aviso
 					</Button>
-					<Button rounded={true} filled={true} style='right' size='small'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						filled={true}
+						style='right'
+						size='small'
+					>
 						Acerto
 					</Button>
-					<Button rounded={true} filled={true} style='wrong' size='small'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						filled={true}
+						style='wrong'
+						size='small'
+					>
 						Erro
 					</Button>
-					<Button rounded={true} filled={true} style='prime' size='small'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						filled={true}
+						style='prime'
+						size='small'
+					>
 						Primário
 					</Button>
-					<Button rounded={true} filled={true} style='second' size='small'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						filled={true}
+						style='second'
+						size='small'
+					>
 						Secundário
 					</Button>
-					<Button rounded={true} filled={true} style='third' size='small'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						filled={true}
+						style='third'
+						size='small'
+					>
 						Terciário
 					</Button>
 				</div>
 				<div className='grid-6' id='botoes_redondos_com_preenchimento_default'>
-					<Button rounded={true} filled={true} style='warning'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						filled={true}
+						style='warning'
+					>
 						Aviso
 					</Button>
-					<Button rounded={true} filled={true} style='right'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						filled={true}
+						style='right'
+					>
 						Acerto
 					</Button>
-					<Button rounded={true} filled={true} style='wrong'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						filled={true}
+						style='wrong'
+					>
 						Erro
 					</Button>
-					<Button rounded={true} filled={true} style='prime'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						filled={true}
+						style='prime'
+					>
 						Primário
 					</Button>
-					<Button rounded={true} filled={true} style='second'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						filled={true}
+						style='second'
+					>
 						Secundário
 					</Button>
-					<Button rounded={true} filled={true} style='third'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						filled={true}
+						style='third'
+					>
 						Terciário
 					</Button>
 				</div>
 				<div className='grid-6' id='botoes_redondos_com_preenchimento_large'>
-					<Button rounded={true} filled={true} style='warning' size='large'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						filled={true}
+						style='warning'
+						size='large'
+					>
 						Aviso
 					</Button>
-					<Button rounded={true} filled={true} style='right' size='large'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						filled={true}
+						style='right'
+						size='large'
+					>
 						Acerto
 					</Button>
-					<Button rounded={true} filled={true} style='wrong' size='large'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						filled={true}
+						style='wrong'
+						size='large'
+					>
 						Erro
 					</Button>
-					<Button rounded={true} filled={true} style='prime' size='large'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						filled={true}
+						style='prime'
+						size='large'
+					>
 						Primário
 					</Button>
-					<Button rounded={true} filled={true} style='second' size='large'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						filled={true}
+						style='second'
+						size='large'
+					>
 						Secundário
 					</Button>
-					<Button rounded={true} filled={true} style='third' size='large'>
+					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
+						rounded={true}
+						filled={true}
+						style='third'
+						size='large'
+					>
 						Terciário
 					</Button>
 				</div>
@@ -982,6 +1337,9 @@ export default function Home() {
 					id='botoes_redondos_com_preenchimento_large_disabled'
 				>
 					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
 						rounded={true}
 						filled={true}
 						style='warning'
@@ -991,6 +1349,9 @@ export default function Home() {
 						Aviso
 					</Button>
 					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
 						rounded={true}
 						filled={true}
 						style='right'
@@ -1000,6 +1361,9 @@ export default function Home() {
 						Acerto
 					</Button>
 					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
 						rounded={true}
 						filled={true}
 						style='wrong'
@@ -1009,6 +1373,9 @@ export default function Home() {
 						Erro
 					</Button>
 					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
 						rounded={true}
 						filled={true}
 						style='prime'
@@ -1018,6 +1385,9 @@ export default function Home() {
 						Primário
 					</Button>
 					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
 						rounded={true}
 						filled={true}
 						style='second'
@@ -1027,6 +1397,9 @@ export default function Home() {
 						Secundário
 					</Button>
 					<Button
+						onClick={() => {
+							console.log('clicked');
+						}}
 						rounded={true}
 						filled={true}
 						style='third'
@@ -1567,7 +1940,7 @@ export default function Home() {
 				<br />
 				{/* Selects */}
 				<div className='grid-3' id='selects_sem_optgroup'>
-					<Select placeholder='Selecione uma opção'>
+					<Select placeHolder='Selecione uma opção'>
 						<option value='1'>1</option>
 						<option value='2'>2</option>
 						<option value='3'>3</option>
@@ -1647,7 +2020,7 @@ export default function Home() {
 							10
 						</Label>
 						<Label style='warning'>Aviso</Label>
-						<Label style='warnin' single={true}>
+						<Label style='warning' single={true}>
 							32
 						</Label>
 						<Label style='right'>Acerto</Label>
@@ -1670,7 +2043,7 @@ export default function Home() {
 							10
 						</Label>
 						<Label style='warning'>Aviso</Label>
-						<Label style='warnin' single={true}>
+						<Label style='warning' single={true}>
 							32
 						</Label>
 						<Label style='right'>Acerto</Label>
@@ -1730,18 +2103,18 @@ export default function Home() {
 				{/* Inputs */}
 				<div className='grid-2' id='text_fields'>
 					<div className='input-group' id='text_fields_sem_icone'>
-						<Input placeholder='texto' /> <br />
-						<Input placeholder='texto' disabled={true} /> <br />
+						<Input placeHolder='texto' /> <br />
+						<Input placeHolder='texto' disabled={true} /> <br />
 						<Input defaultValue='Completo' style='done' /> <br />
 						<Input defaultValue='Aviso' style='warning' /> <br />
 						<Input defaultValue='Acerto' style='right' /> <br />
 						<Input defaultValue='Erro' style='wrong' /> <br />
 					</div>
 					<div className='input-group' id='text_fields_com_icone'>
-						<Input icon='/img/ico/user.svg' placeholder='texto' /> <br />
+						<Input icon='/img/ico/user.svg' placeHolder='texto' /> <br />
 						<Input
 							icon='/img/ico/user.svg'
-							placeholder='texto'
+							placeHolder='texto'
 							disabled={true}
 						/>{' '}
 						<br />
@@ -1778,7 +2151,7 @@ export default function Home() {
 						cols={30}
 						rows={5}
 						maxLenght={100}
-						placeholder='Escreva algo aqui...'
+						placeHolder='Escreva algo aqui...'
 					/>
 
 					<TextArea
@@ -1786,7 +2159,7 @@ export default function Home() {
 						cols={30}
 						rows={5}
 						maxLenght={100}
-						placeholder='Escreva algo aqui...'
+						placeHolder='Escreva algo aqui...'
 						defaultValue='Algo deu errado!'
 					/>
 
@@ -1795,7 +2168,7 @@ export default function Home() {
 						cols={30}
 						rows={5}
 						maxLenght={100}
-						placeholder='Escreva algo aqui...'
+						placeHolder='Escreva algo aqui...'
 						defaultValue='Completo'
 					/>
 				</div>

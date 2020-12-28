@@ -4,7 +4,12 @@ import { useRouter } from 'next/router';
 import styles from './Pagination.module.css';
 
 /**
- * Pagination
+ * @name Pagination
+ *
+ * @param {string} props.size - Tamanho do componente. O valor default é ''
+ * @param {number} props.paginationNumber - Número da página atual. Serve apenas para forçar um número de paginação caso não haja query params de page
+ * @param {number} props.paginationMin - Menor número do menu de paginação
+ * @param {number} props.paginationMax - Maior número do menu de paginação
  *
  * @component
  * @example
@@ -17,25 +22,9 @@ import styles from './Pagination.module.css';
 const SIZES = ['small', 'large'];
 
 interface PaginationProps {
-	/**
-	 * Tamanho do componente. O valor default é ''
-	 * @type {string}
-	 */
-	size?: string;
-	/**
-	 * Número da página atual. Serve apenas para forçar um número de paginação caso não haja query params de page
-	 * @type {number}
-	 */
+	size?: 'small' | 'large';
 	paginationNumber?: number;
-	/**
-	 * Menor número do menu de paginação
-	 * @type {number}
-	 */
 	paginationMin: number;
-	/**
-	 * Maior número do menu de paginação
-	 * @type {number}
-	 */
 	paginationMax: number;
 	className?: string;
 }

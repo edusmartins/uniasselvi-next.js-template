@@ -1,9 +1,8 @@
 import React from 'react';
-
 import styles from './CrumbsList.module.css';
 
 /**
- * CrumbsList
+ * @name CrumbsList
  *
  * @component
  * @example

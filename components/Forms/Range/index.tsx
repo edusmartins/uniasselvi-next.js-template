@@ -1,9 +1,11 @@
 import React from 'react';
-
 import styles from './Range.module.css';
 
 /**
- * Range
+ * @name Range
+ *
+ * @param {string} props.style - Estilo do input. Se não definido, o default é ''
+ * @param {boolean} props.filled - Se o botão é preenchido. Se não definido, o default é {false}
  *
  * @component
  * @example
@@ -12,19 +14,11 @@ import styles from './Range.module.css';
  * )
  */
 
-/** Array com os estilos disponíveis */
+// Array com os estilos disponíveis
 const STYLES = ['prime', 'second', 'third', 'right', 'wrong'];
 
 interface RangeProps {
-	/**
-	 * Estilo do input. Se não definido, o default é ''.
-	 * @type {string}
-	 */
 	style?: string;
-	/**
-	 * Se o botão é preenchido. Se não definido, o default é {false}
-	 * @type {boolean}
-	 */
 	filled?: boolean;
 	className?: string;
 }

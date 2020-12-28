@@ -1,7 +1,18 @@
+import React from 'react';
 import styles from './Switch.module.css';
 
 /**
- * Switch
+ * @name Switch
+ *
+ * @param {string} props.size - Tamanho do switch. Se não definido, o default é ''
+ * @param {boolean} props.disabled - Se o switch está desabilitado. Se não definido, o default é {false}
+ * @param {boolean} props.checked - Se o botão está marcado. Se não definido, o default é {false}
+ * @param {boolean} props.defaultChecked - Se o input está inicialmente marcado. Valor default é {false}
+ * @param {boolean} props.rounded - Se o botão tem bordas arredondadas. Se não definido, o default é {false}
+ * @param {string} props.value - valor do input
+ * @param {string} props.defaultValue - Texto pré-definido para o input se o usuário puder mudar esse valor
+ * @param {(event: React.ChangeEvent<HTMLInputElement>) => void} props.onChange - Função onChange do input checkbox dentro do componente
+ * @param {(event: React.MouseEvent<HTMLInputElement>) => void} props.onClick - Função onClick do input
  *
  * @component
  * @example
@@ -13,59 +24,19 @@ import styles from './Switch.module.css';
  * )
  */
 
-/** Array com os tamanhos disponíveis */
+// Array com os tamanhos disponíveis
 const SIZES = ['small', 'large'];
 
 interface SwitchProps {
-	/**
-	 * Tamanho do switch. Se não definido, o default é ''
-	 * @type {string}
-	 */
-	size?: string;
-	/**
-	 * Se o switch está desabilitado. Se não definido, o default é {false}
-	 * @type {boolean}
-	 */
+	size?: 'small' | 'large';
 	disabled?: boolean;
-	/**
-	 * Se o botão está marcado. Se não definido, o default é {false}
-	 * @type {boolean}
-	 */
 	checked?: boolean;
-	/**
-	 * Se o input está inicialmente marcado. Valor default é {false}
-	 * @type {boolean}
-	 */
 	defaultChecked?: boolean;
-	/**
-	 * Se o botão tem bordas arredondadas. Se não definido, o default é {false}
-	 * @type {boolean}
-	 */
 	rounded?: boolean;
-	/**
-	 * valor do input.
-	 * @type {string}
-	 */
 	value?: string;
-	/**
-	 * Texto pré-definido para o input se o usuário puder mudar esse valor.
-	 * @type {string}
-	 */
 	defaultValue?: string;
-	/**
-	 * Função onChange do input checkbox dentro do componente
-	 * @type {Function}
-	 */
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-	/**
-	 * Função onClick do input
-	 * @type {Function}
-	 */
 	onClick?: (event: React.MouseEvent<HTMLInputElement>) => void;
-	/**
-	 * className do switch.
-	 * @type {string}
-	 */
 	className?: string;
 }
 
