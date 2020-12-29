@@ -1,3 +1,9 @@
+/*
+	?
+	? ----> font import
+	?
+*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
 /* 
 	?
 	? ----> vars
@@ -39,14 +45,14 @@
 	/** fontes/texto **/
 	--default-font-size: 16px;
 
-	--fs-12: 0.75em;
-	--fs-16: 1em;
-	--fs-18: 1.125em;
-	--fs-24: 1.5em;
-	--fs-30: 1.85em;
-	--fs-40: 2.5em;
-	--fs-48: max(3em, 48px);
-	--fs-60: max(3.75em, 60px);
+	--fs-12: 0.75rem;
+	--fs-16: 1rem;
+	--fs-18: 1.125rem;
+	--fs-24: 1.5rem;
+	--fs-30: 1.85rem;
+	--fs-40: 2.5rem;
+	--fs-48: max(3rem, 48px);
+	--fs-60: max(3.75rem, 60px);
 
 	--ff-rubik: 'Rubik', sans-serif;
 	--ff-neo: 'neo-sans', sans-serif;
@@ -63,6 +69,8 @@
 */
 * {
 	box-sizing: border-box;
+	font-size: var(--default-font-size);
+	font-family: var(--ff-rubik);
 }
 
 body,
@@ -72,8 +80,6 @@ html {
 }
 
 html {
-	font-size: var(--fs-16);
-	font-family: var(--ff-rubik);
 	line-height: var(--line-height);
 	letter-spacing: var(--letter-spacing-lighter);
 }

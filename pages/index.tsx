@@ -53,10 +53,6 @@ export default function Home() {
 					rel='stylesheet'
 					href='https://fonts.googleapis.com/icon?family=Material+Icons'
 				/>
-				<link
-					rel='stylesheet'
-					href='https://fonts.googleapis.com/css2?family=Rubik&display=swap'
-				/>
 			</Head>
 			<main>
 				{/*Headers*/}

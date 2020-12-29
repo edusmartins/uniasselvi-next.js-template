@@ -37,12 +37,17 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "edusmartins.uniasselvi-next-components/checkbox@1.0.8": {
+    "edusmartins.uniasselvi-next-components/checkbox@1.1.0": {
         "files": [
             {
                 "relativePath": "components/Forms/Checkbox/Checkbox.module.css",
                 "test": false,
                 "name": "Checkbox.module.css"
+            },
+            {
+                "relativePath": "components/Forms/Checkbox/check.svg",
+                "test": false,
+                "name": "check.svg"
             },
             {
                 "relativePath": "components/Forms/Checkbox/index.tsx",
@@ -55,7 +60,19 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "edusmartins.uniasselvi-next-components/header@1.0.8": {
+    "edusmartins.uniasselvi-next-components/global@1.1.1": {
+        "files": [
+            {
+                "relativePath": "styles/global.css",
+                "test": false,
+                "name": "global.css"
+            }
+        ],
+        "mainFile": "styles/global.css",
+        "origin": "AUTHORED",
+        "exported": true
+    },
+    "edusmartins.uniasselvi-next-components/header@1.1.1": {
         "files": [
             {
                 "relativePath": "components/Text/Header/Header.module.css",
