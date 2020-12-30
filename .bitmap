@@ -19,13 +19,8 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "edusmartins.uniasselvi-next-components/button@1.0.8": {
+    "edusmartins.uniasselvi-next-components/button@1.1.1": {
         "files": [
-            {
-                "relativePath": "components/Buttons/Button/Button.module.css",
-                "test": false,
-                "name": "Button.module.css"
-            },
             {
                 "relativePath": "components/Buttons/Button/index.tsx",
                 "test": false,
@@ -60,7 +55,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "edusmartins.uniasselvi-next-components/global@1.1.1": {
+    "edusmartins.uniasselvi-next-components/global@1.1.2": {
         "files": [
             {
                 "relativePath": "styles/global.css",
@@ -90,13 +85,8 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "edusmartins.uniasselvi-next-components/icon-button@1.0.8": {
+    "edusmartins.uniasselvi-next-components/icon-button@1.1.2": {
         "files": [
-            {
-                "relativePath": "components/Buttons/IconButton/IconButton.module.css",
-                "test": false,
-                "name": "IconButton.module.css"
-            },
             {
                 "relativePath": "components/Buttons/IconButton/index.tsx",
                 "test": false,
