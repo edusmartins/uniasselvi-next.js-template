@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './UnorderedList.module.css';
+import styled from 'styled-components';
 
 /**
  *
@@ -20,15 +20,39 @@ interface UnorderedListProps {
 	className?: string;
 }
 
+const StyledUl = styled.ul`
+	&.unordered_list {
+		margin: 1em 0;
+		padding: 0;
+		list-style: none;
+		display: grid;
+		grid-gap: 1em;
+	}
+
+	&.unordered_list li {
+		display: grid;
+		grid-template-columns: 0 1fr;
+		grid-gap: 1.75em;
+		align-items: start;
+	}
+
+	&.unordered_list li::before {
+		content: '•';
+		font-size: 36px;
+		color: var(--cinza-escuro);
+		line-height: 1.5rem;
+	}
+`;
+
 const UnorderedList: React.FC<UnorderedListProps> = ({
 	children,
 	className,
 	...rest
 }) => {
 	return (
-		<ul className={`${styles.unordered_list} ${className}`} {...rest}>
+		<StyledUl className={`unordered_list ${className}`} {...rest}>
 			{children}
-		</ul>
+		</StyledUl>
 	);
 };
 

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import styles from './TextArea.module.css';
+import React from 'react';
+import styled from 'styled-components';
 
 /**
  * @render react
@@ -58,6 +58,50 @@ interface TextAreaProps {
 	className?: string;
 }
 
+const StyledTextArea = styled.textarea`
+	&.textarea {
+		padding: 0.5em 1em;
+		color: var(--cinza-muito-escuro);
+		border: 2px solid var(--cinza-medio);
+		border-radius: 5px;
+		font-family: inherit;
+		font-size: 1em;
+	}
+
+	&.textarea::placeholder {
+		color: var(--cinza-medio-escuro);
+	}
+
+	&.textarea:hover {
+		border-color: var(--cinza-medio-escuro);
+	}
+
+	&.textarea:focus {
+		border-color: var(--seleções) !important;
+		/* color: inherit !important; */
+		background: var(--branco);
+		outline: none;
+	}
+
+	&.textarea:disabled {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+
+	&.textarea.done {
+		border-color: var(--cinza-muito-escuro);
+	}
+
+	&.textarea.wrong {
+		border-color: var(--erro);
+		color: var(--erro);
+	}
+
+	&.textarea.resize {
+		resize: none;
+	}
+`;
+
 /**
  * @param {Props} props
  */
@@ -85,42 +129,32 @@ const TextArea: React.FC<TextAreaProps> = ({
 	/** Checa se foi passado algum dos estilos disponíveis para a TextArea. Se não, define o estilo como '' */
 	const checkTextAreaStyle = STYLES.includes(style) ? style : '';
 
-	/** Checa se foi passado algum dos estilos disponíveis para a TextArea. Se não, define o estilo como '' */
-	const checkReadOnly = WRAP.includes(wrap) ? wrap : WRAP[0];
-
 	return (
-		<div
+		<StyledTextArea
 			className={`
-			${styles.textarea_wrapper}
+			textarea
+			${checkTextAreaStyle}
+			${resize ? 'resize' : ''}
 			${className}
 		`}
+			name={name}
+			id={id}
+			cols={cols}
+			placeholder={placeHolder}
+			value={value}
+			form={form}
+			wrap={wrap}
+			rows={rows}
+			minLength={minLenght}
+			maxLength={maxLenght}
+			required={required}
+			readOnly={readOnly}
+			disabled={disabled}
+			autoFocus={autoFocus}
+			{...rest}
 		>
-			<textarea
-				className={`
-			textarea
-			${styles.textarea}
-			${styles[`${checkTextAreaStyle}`]}
-			${styles[`${resize ? 'resize' : ''}`]}
-		`}
-				name={name}
-				id={id}
-				cols={cols}
-				placeholder={placeHolder}
-				value={value}
-				form={form}
-				wrap={wrap}
-				rows={rows}
-				minLength={minLenght}
-				maxLength={maxLenght}
-				required={required}
-				readOnly={readOnly}
-				disabled={disabled}
-				autoFocus={autoFocus}
-				{...rest}
-			>
-				{children}
-			</textarea>
-		</div>
+			{children}
+		</StyledTextArea>
 	);
 };
 

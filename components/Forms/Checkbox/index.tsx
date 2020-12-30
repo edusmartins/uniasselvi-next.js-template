@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Checkbox.module.css';
+import styled from 'styled-components';
 
 /**
  * @render react
@@ -40,6 +40,137 @@ interface CheckboxProps {
 	onClick?: (event: React.MouseEvent<HTMLInputElement>) => void;
 }
 
+const StyledSvg = styled.svg`
+	&.checkIcon {
+		visibility: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		position: absolute;
+		top: 0.1em;
+		left: 0.05em;
+		height: 0.8em;
+		width: 0.8em;
+		transition: 200ms ease;
+	}
+`;
+
+const StyledDiv = styled.div`
+	&.checkbox {
+		display: flex;
+		position: relative;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+	&.checkbox::before {
+		content: '';
+		display: none;
+	}
+
+	&.checkbox input[type='checkbox'] {
+		position: absolute;
+		opacity: 0;
+	}
+
+	&.checkbox label {
+		display: block;
+		position: relative;
+		z-index: 9;
+		cursor: pointer;
+		transition: 200ms ease;
+		padding-left: calc(16px + 1em);
+	}
+
+	&.checkbox .checkbox_check {
+		display: block;
+		position: absolute;
+		border: 2px solid var(--cinza-medio-escuro);
+		border-radius: 100%;
+		height: 1em;
+		width: 1em;
+		z-index: 5;
+		transition: 200ms ease;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&.checkbox .checkbox_check {
+		border-radius: 5px;
+	}
+
+	/** hovers **/
+
+	&.checkbox:hover .checkbox_check {
+		border: 2px solid var(--cinza-muito-escuro);
+	}
+
+	&.checkbox:hover input[type='checkbox']:checked ~ .checkbox_check {
+		border: 2px solid var(--amarelo-escuro);
+		background: var(--amarelo-escuro);
+	}
+
+	&.checkbox:hover label {
+		color: var(--cinza-medio-escuro);
+	}
+
+	/** checked **/
+
+	&.checkbox input[type='checkbox']:checked ~ .checkbox_check,
+	&.checkbox:hover input[type='checkbox']:checked:disabled ~ .checkbox_check {
+		border: 2px solid var(--amarelo);
+		background: var(--amarelo);
+	}
+
+	&.checkbox input[type='checkbox']:checked ~ .checkbox_check .checkIcon {
+		visibility: visible;
+	}
+
+	/** disabled **/
+
+	&.checkbox input[type='checkbox']:disabled ~ label {
+		color: var(--cinza-medio);
+		cursor: auto;
+	}
+
+	&.checkbox input[type='checkbox']:disabled ~ .checkbox_check {
+		border-color: var(--cinza-medio);
+	}
+
+	&.checkbox input[type='checkbox']:checked:disabled ~ .checkbox_check {
+		opacity: 0.5;
+		border-color: var(--amarelo);
+	}
+
+	/** focus **/
+
+	&.checkbox input[type='checkbox']:focus ~ label {
+		text-decoration: underline;
+		text-underline-position: under;
+	}
+`;
+
+function CheckIcon() {
+	return (
+		<StyledSvg
+			className='checkIcon'
+			id='Camada_1'
+			data-name='Camada 1'
+			xmlns='http://www.w3.org/2000/svg'
+			viewBox='0 0 100 100'
+		>
+			<g id='icone-certo'>
+				<path
+					id='Caminho_421'
+					data-name='Caminho 421'
+					d='M36,81.53h0a4,4,0,0,1-2.85-1.21L6.1,52.63A4,4,0,1,1,11.78,47l.07.06,24.2,24.79L88.22,19.64a4,4,0,1,1,5.67,5.68l-55,55A4,4,0,0,1,36,81.53Z'
+				/>
+			</g>
+		</StyledSvg>
+	);
+}
+
 /**
  * @param {Props} props
  */
@@ -60,7 +191,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
 	...rest
 }) => {
 	return (
-		<div className={`${styles.checkbox} ${className}`}>
+		<StyledDiv className={`checkbox ${className}`}>
 			<input
 				type='checkbox'
 				id={id}
@@ -77,8 +208,10 @@ const Checkbox: React.FC<CheckboxProps> = ({
 				{...rest}
 			/>
 			<label htmlFor={id}>{children}</label>
-			<div className={styles.checkbox_check}></div>
-		</div>
+			<div className='checkbox_check'>
+				<CheckIcon />
+			</div>
+		</StyledDiv>
 	);
 };
 

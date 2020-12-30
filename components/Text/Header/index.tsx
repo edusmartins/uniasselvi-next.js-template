@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Header.module.css';
+import styled from 'styled-components';
 
 /**
  * @render react
@@ -21,6 +21,43 @@ interface HeaderProps {
 	ref?: any;
 }
 
+const StyledHeaderOne = styled.h1`
+	font-family: var(--ff-neo);
+	font-weight: bold;
+	font-size: var(--fs-60);
+	letter-spacing: var(--letter-spacing-light);
+`;
+const StyledHeaderTwo = styled.h2`
+	font-family: var(--ff-neo);
+	font-weight: medium;
+	font-size: var(--fs-48);
+	letter-spacing: var(--letter-spacing-light);
+`;
+const StyledHeaderThree = styled.h3`
+	font-family: var(--ff-neo);
+	font-weight: normal;
+	font-size: var(--fs-40);
+	letter-spacing: var(--letter-spacing-light);
+`;
+const StyledHeaderFour = styled.h4`
+	font-family: var(--ff-rubik);
+	font-weight: bold;
+	font-size: var(--fs-30);
+	letter-spacing: var(--letter-spacing-light);
+`;
+const StyledHeaderFive = styled.h5`
+	font-family: var(--ff-rubik);
+	font-weight: medium;
+	font-size: var(--fs-24);
+	letter-spacing: var(--letter-spacing-light);
+`;
+const StyledHeaderSix = styled.h6`
+	font-family: var(--ff-rubik);
+	font-weight: normal;
+	font-size: var(--fs-18);
+	letter-spacing: var(--letter-spacing-light);
+`;
+
 /**
  * @param {Props} props
  */
@@ -34,40 +71,40 @@ const Header: React.FC<HeaderProps> = ({
 	switch (size) {
 		case 'h6':
 			return (
-				<h6 className={`${styles[`h6`]} ${className}`} {...rest} ref={ref}>
+				<StyledHeaderSix className={className} {...rest} ref={ref}>
 					{children}
-				</h6>
+				</StyledHeaderSix>
 			);
 		case 'h5':
 			return (
-				<h5 className={`${styles[`h5`]} ${className}`} {...rest} ref={ref}>
+				<StyledHeaderFive className={className} {...rest} ref={ref}>
 					{children}
-				</h5>
+				</StyledHeaderFive>
 			);
 		case 'h4':
 			return (
-				<h4 className={`${styles[`h4`]} ${className}`} {...rest} ref={ref}>
+				<StyledHeaderFour className={className} {...rest} ref={ref}>
 					{children}
-				</h4>
+				</StyledHeaderFour>
 			);
 		case 'h3':
 			return (
-				<h3 className={`${styles[`h3`]} ${className}`} {...rest} ref={ref}>
+				<StyledHeaderThree className={className} {...rest} ref={ref}>
 					{children}
-				</h3>
+				</StyledHeaderThree>
 			);
 		case 'h2':
 			return (
-				<h2 className={`${styles[`h2`]} ${className}`} {...rest} ref={ref}>
+				<StyledHeaderTwo className={className} {...rest} ref={ref}>
 					{children}
-				</h2>
+				</StyledHeaderTwo>
 			);
 		case 'h1':
 		default:
 			return (
-				<h1 className={`${styles[`h1`]} ${className}`} {...rest} ref={ref}>
+				<StyledHeaderOne className={className} {...rest} ref={ref}>
 					{children}
-				</h1>
+				</StyledHeaderOne>
 			);
 	}
 };

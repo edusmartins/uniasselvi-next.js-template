@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Label.module.css';
+import styled from 'styled-components';
 
 /**
  * @render react
@@ -16,14 +16,53 @@ import styles from './Label.module.css';
  *
  */
 
-// Array com os estilos disponíveis
-const STYLES = ['prime', 'second', 'third', 'warning', 'right', 'wrong'];
-
 interface LabelProps {
 	style?: 'prime' | 'second' | 'third' | 'warning' | 'right' | 'wrong';
 	single?: boolean;
 	className?: string;
 }
+
+// Array com os estilos disponíveis
+const STYLES = ['prime', 'second', 'third', 'warning', 'right', 'wrong'];
+
+const StyledSpan = styled.span`
+	&.label {
+		padding: 0.5em 1em;
+		color: var(--branco);
+		border-radius: 5px;
+		width: fit-content;
+		height: fit-content;
+	}
+
+	&.label.single {
+		padding: 0.5em;
+	}
+
+	&.label.prime {
+		background: var(--cinza-muito-escuro);
+	}
+
+	&.label.warning {
+		background: var(--aviso);
+	}
+
+	&.label.right {
+		background: var(--acerto);
+	}
+
+	&.label.wrong {
+		background: var(--erro);
+	}
+
+	&.label.second {
+		background: var(--amarelo);
+		color: var(--preto);
+	}
+	&.label.third {
+		background: var(--verde-nao-ouse);
+		color: var(--branco);
+	}
+`;
 
 /**
  * @param {Props} props
@@ -39,16 +78,16 @@ const Label: React.FC<LabelProps> = ({
 	const checkLabelStyle = STYLES.includes(style) ? style : STYLES[0];
 
 	return (
-		<span
-			className={`${styles.label} 
-									${styles[`${single ? 'single' : ''}`]}
-									${styles[`${checkLabelStyle}`]}
+		<StyledSpan
+			className={`label
+									${single ? 'single' : ''}
+									${checkLabelStyle}
 									${className}
                 `}
 			{...rest}
 		>
 			{children}
-		</span>
+		</StyledSpan>
 	);
 };
 

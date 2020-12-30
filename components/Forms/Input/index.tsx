@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Input.module.css';
+import styled from 'styled-components';
 
 /**
  * @render react
@@ -39,9 +39,6 @@ import styles from './Input.module.css';
  * @property {function} [onChange] - Função `onChange` do input
  *
  */
-
-// Array com os estilos disponíveis
-const STYLES = ['done', 'warning', 'right', 'wrong'];
 
 interface InputProps {
 	style?: 'done' | 'warning' | 'right' | 'wrong';
@@ -95,6 +92,75 @@ interface InputProps {
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
+// Array com os estilos disponíveis
+const STYLES = ['done', 'warning', 'right', 'wrong'];
+
+const StyledInput = styled.input`
+	&.input {
+		padding: 0.5em 1em;
+		color: var(--cinza-muito-escuro);
+		border: 2px solid var(--cinza-medio);
+		border-radius: 5px;
+		font-family: inherit;
+		font-size: 1em;
+	}
+
+	&.input::placeholder {
+		color: var(--cinza-medio-escuro);
+	}
+
+	&.input:hover {
+		border-color: var(--cinza-medio-escuro);
+	}
+
+	&.input:focus {
+		border-color: var(--seleções) !important;
+		/* color: inherit !important; */
+		background: var(--branco);
+		outline: none;
+	}
+
+	&.input:disabled {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+
+	&.input.done {
+		border-color: var(--cinza-muito-escuro);
+	}
+	&.input.warning {
+		border-color: var(--aviso);
+		color: var(--aviso);
+	}
+	&.input.right {
+		border-color: var(--acerto);
+		color: var(--acerto);
+	}
+	&.input.wrong {
+		border-color: var(--erro);
+		color: var(--erro);
+	}
+`;
+
+const StyledDiv = styled.div`
+	&.input_wrapper {
+		position: relative;
+		display: flex;
+		align-items: center;
+	}
+
+	&.input_wrapper img {
+		position: absolute;
+		left: 1em;
+		height: 1em;
+	}
+
+	&.input_wrapper img + .input {
+		padding-left: 3em;
+		margin: 0;
+	}
+`;
+
 /**
  * @param {Props} props
  */
@@ -136,14 +202,14 @@ const Input: React.FC<InputProps> = ({
 	const iconImg = icon ? <img src={icon} alt='Icone' /> : null;
 
 	return (
-		<div
+		<StyledDiv
 			className={`
-		${styles.input_wrapper}
+		input_wrapper
 		${className}
     `}
 		>
 			{iconImg}
-			<input
+			<StyledInput
 				type={type ? type : 'text'}
 				value={value}
 				defaultValue={defaultValue}
@@ -166,16 +232,16 @@ const Input: React.FC<InputProps> = ({
 				accept={accept}
 				{...rest}
 				className={`
-      ${styles.input}
-      ${styles[`${checkInputStyle ? checkInputStyle : null}`]} 
-			`}
+					input
+					${checkInputStyle ? checkInputStyle : null} 
+			  `}
 				id={id}
 				name={name}
 				onClick={onClick}
 				onChange={onChange}
 			/>
 			{children}
-		</div>
+		</StyledDiv>
 	);
 };
 

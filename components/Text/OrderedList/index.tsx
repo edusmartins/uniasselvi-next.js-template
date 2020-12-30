@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './OrderedList.module.css';
+import styled from 'styled-components';
 
 /**
  * @render react
@@ -18,15 +18,45 @@ interface OrderedListProps {
 	className?: string;
 }
 
+const StyledOl = styled.ol`
+	&.ordered_list {
+		margin: 1em 0;
+		padding: 0;
+		list-style: none;
+		display: grid;
+		grid-gap: 1em;
+		counter-reset: orderedlist;
+	}
+
+	&.ordered_list > li {
+		display: grid;
+		grid-template-columns: 0 1fr;
+		grid-gap: 1.75em;
+		align-items: start;
+	}
+
+	&.ordered_list li::before {
+		counter-increment: orderedlist;
+		content: counter(orderedlist);
+		width: 1rem;
+		padding: 0 4px;
+		margin-left: -8px;
+		text-align: center;
+		color: var(--branco);
+		background-color: var(--cinza-escuro);
+		border-radius: 5px;
+	}
+`;
+
 const OrderedList: React.FC<OrderedListProps> = ({
 	children,
 	className,
 	...rest
 }) => {
 	return (
-		<ol className={`${styles.ordered_list} ${className}`} {...rest}>
+		<StyledOl className={`ordered_list ${className}`} {...rest}>
 			{children}
-		</ol>
+		</StyledOl>
 	);
 };
 
